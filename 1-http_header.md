@@ -100,3 +100,14 @@ HTTPの通信は速度を上げるため、基本的にデータを圧縮して�
 
 ### HTTPヘッダーに関するクイズを3問、作成してください
 
+### Q1 クロスオリジンとは何か説明しなさい
+
+### Q2 HTTPヘッダーに直接関係のある技術を全て選びなさい
+
+- document.history
+- CORS
+- JSON-web-token
+- webstorage
+- SSR(server side rendaring)
+
+### Q3 HTTPヘッダインジェクションの手法と対策について簡潔に述べよ
