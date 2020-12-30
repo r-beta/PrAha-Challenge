@@ -56,12 +56,54 @@ C:\Users\Owner>curl -H  "X-Test: hello" https://httpbin.org/headers
 }
 ```
 
+### <回答>
 
+```
+C:\Users\Owner>curl -X POST -H "Content-Type: application/json" -d "{"name": "hoge"}" https://httpbin.org/post
+{
+  "args": {},
+  "data": "{name: hoge}",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept": "*/*",
+    "Content-Length": "12",
+    "Content-Type": "application/json",
+    "Host": "httpbin.org",
+    "User-Agent": "curl/7.55.1",
+    "X-Amzn-Trace-Id": "xxxxx"
+  },
+  "json": null,
+  "origin": "xxxxx",
+  "url": "https://httpbin.org/post"
+}
 
+```
 
 ### 問題３
 もう少し複雑なbodyを送信してみましょう。以下のようなオブジェクトをbodyに含めて、送信してください
-- {userA: {name: "hoge", age: 29}}
+- `{userA: {name: "hoge", age: 29}}`
+
+```
+C:\Users\Owner>curl -X POST -H "Content-Type: application/json" -d "{"userA": {"name": "hoge", "age": 29}}" https://httpbin.org/post
+{
+  "args": {},
+  "data": "{userA: {name: hoge, age: 29}}",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept": "*/*",
+    "Content-Length": "30",
+    "Content-Type": "application/json",
+    "Host": "httpbin.org",
+    "User-Agent": "curl/7.55.1",
+    "X-Amzn-Trace-Id": "xxxx"
+  },
+  "json": null,
+  "origin": "xxxx",
+  "url": "https://httpbin.org/post"
+}
+```
 
 
 ### 問題４
