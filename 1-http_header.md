@@ -4,11 +4,55 @@
 
 - ### Host
 
+リクエストが送信される先のホスト名とポート番号が指定される
+
+> Host ヘッダー項目はすべての HTTP/1.1 リクエストメッセージで送信する必要があります。 HTTP/1.1 リクエストメッセージに Host ヘッダー項目がなかったり、二つ以上あったりした場合は 400 (Bad Request) ステータスコードが返されることがあります。
+
+
+すべてのリクエストに含まれると記述があったため、試しに、chromeデベロッパーツールで確認してみたが、Hostというプロパティは確認できなかった。  
+curlに--verbose オプションをつけることで確認することができた  
+```
+# curl --verbose https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Host
+```
+
 - ### Content-type
+
+Response Headerに含まれる  
+そのHTTPレスポンスがどういった形式かを表すもの  
+たとえば、HTMLを返す通信の場合、`content-type: text/html; charset=utf-8`と書かれていた  
+例：https://developer.mozilla.org/ja/docs/Glossary/Request_header
+
+png画像を返す場合、`image/png`
+例：https://developer.mozilla.org/favicon-32x32.png
+
+jsonを返す場合、`application/json`
+例：https://developer.mozilla.org/manifest.json
+
+このcontent-typeを元にブラウザは画面を組み立てている
+
 
 - ### User-agent
 
+リクエストヘッダーに含まれる  
+どのブラウザからのリクエストかを記述している  
+試しにchromeからのリクエストを確認してみた  
+`user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36`
+chromeの場合、互換性のためにSafariやMozillaなどの文字が含まれているらしい  
+これを取り出し、正規表現などで検証すればブラウザごとにレスポンスを変えるような動きが可能になりそう  
+例えばIEの場合だと、下記３つが含まれている  
+```
+; MSIE xyz;
+Trident/7.0;
+ .*rv:xyz
+ ```
+ただし、確実ではないため、過信は禁物で、ブラウザごとに挙動を分ける必要が本当にあるのか、もっと他に良い方法がないかを探すことが推奨されている様子。
+
+
 - ### Accept
+
+ブラウザが受け取ることのできるMIMEタイプをサーバに伝えるため、requestに含めて送信する、サーバ側はこれを確認して適切なcontent-typeを返している  
+MIMEタイプはカンマ区切りで並べることができ、クオリティファクターに値をセットして優先度を指定する  
+ひとつのURLに対し、AcceptやUser-Agentなどで返却される値が違う（切り替わる）仕組みをサーバー駆動型コンテントネゴシエーションと呼ぶ  
 
 - ### Referer
 
