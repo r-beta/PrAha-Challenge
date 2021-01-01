@@ -129,6 +129,29 @@ Content-Typeを変更して、リクエストを送信してみましょう
 }
 ```
 
+```
+curl -X POST -H "content-type : application/x-www-form-urlencoded" -d "{"name": "hoge"}" https://httpbin.org/post
+{
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {
+    "{name: hoge}": ""
+  },
+  "headers": {
+    "Accept": "*/*",
+    "Content-Length": "12",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Host": "httpbin.org",
+    "User-Agent": "curl/7.64.1",
+    "X-Amzn-Trace-Id": "xxxx"
+  },
+  "json": null,
+  "origin": "xxxx",
+  "url": "https://httpbin.org/post"
+}
+```
+
 
 
 ## postman
@@ -139,4 +162,11 @@ Content-Typeを変更して、リクエストを送信してみましょう
 
 ## クイズ
 ### curlに関するクイズを作成してください
+
+### Q1 curlの名前の由来を答えよ
+
+### Q2 curlで送るリクエストの中身を確認する方法を答えよ
+
+### Q3 開発中にcurlを使う場面を説明せよ
+
 ### postmanに関するクイズを作成してください
