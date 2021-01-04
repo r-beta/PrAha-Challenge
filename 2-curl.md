@@ -159,6 +159,103 @@ curl -X POST -H "content-type : application/x-www-form-urlencoded" -d "{"name": 
 - postmanをインストールしてください
 - 上記の課題（curlコマンド）と同じ結果を得られるよう、リクエストを全てpostmanで再現してください
 
+### 問題１’
+
+```
+{
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Host": "httpbin.org",
+        "Postman-Token": "2a6911fe-3b8f-4177-a6b1-f88b7cb8bd22",
+        "User-Agent": "PostmanRuntime/7.26.8",
+        "X-Amzn-Trace-Id": "xxx",
+        "X-Test": "hello"
+    }
+}
+```
+
+### 問題2’
+
+```
+{
+    "args": {},
+    "data": "{\"name\":\"hoge\"}",
+    "files": {},
+    "form": {},
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Content-Length": "15",
+        "Content-Type": "application/json",
+        "Host": "httpbin.org",
+        "Postman-Token": "586a8d90-3ef2-4823-bbac-8a242dd6e263",
+        "User-Agent": "PostmanRuntime/7.26.8",
+        "X-Amzn-Trace-Id": "xxx"
+    },
+    "json": {
+        "name": "hoge"
+    },
+    "origin": "xxx",
+    "url": "https://httpbin.org/post"
+}
+```
+
+### 問題3’
+
+```
+{
+    "args": {},
+    "data": "{\"userA\": {\"name\": \"hoge\", \"age\": 29}}",
+    "files": {},
+    "form": {},
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Content-Length": "38",
+        "Content-Type": "application/json",
+        "Host": "httpbin.org",
+        "Postman-Token": "90930384-dd78-422b-95f6-9d286427da05",
+        "User-Agent": "PostmanRuntime/7.26.8",
+        "X-Amzn-Trace-Id": "xxx"
+    },
+    "json": {
+        "userA": {
+            "age": 29,
+            "name": "hoge"
+        }
+    },
+    "origin": "xxx",
+    "url": "https://httpbin.org/post"
+}
+```
+
+### 問題4’
+
+```
+{
+    "args": {},
+    "data": "",
+    "files": {},
+    "form": {
+        "{\"name\":\"hoge\"}": ""
+    },
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Content-Length": "15",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Host": "httpbin.org",
+        "Postman-Token": "2df7b1c9-498e-4ee7-8f27-c301fc40d32b",
+        "User-Agent": "PostmanRuntime/7.26.8",
+        "X-Amzn-Trace-Id": "xxx"
+    },
+    "json": null,
+    "origin": "xxx",
+    "url": "https://httpbin.org/post"
+}
+```
+
 
 ## クイズ
 ### curlに関するクイズを作成してください
@@ -170,3 +267,9 @@ curl -X POST -H "content-type : application/x-www-form-urlencoded" -d "{"name": 
 ### Q3 開発中にcurlを使う場面を説明せよ
 
 ### postmanに関するクイズを作成してください
+
+### Q1
+
+### Q2
+
+### Q3
