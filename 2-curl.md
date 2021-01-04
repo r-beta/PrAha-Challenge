@@ -268,8 +268,8 @@ curl -X POST -H "content-type : application/x-www-form-urlencoded" -d "{"name": 
 
 ### postmanに関するクイズを作成してください
 
-### Q1
+### Q1 postmanで使える便利な機能をひとつ答えなさい
 
-### Q2
+### Q2 Q1が活用できるシーンを答えなさい
 
-### Q3
+### Q3 postmanでgoogle.comのHTMLを取得しなさい
