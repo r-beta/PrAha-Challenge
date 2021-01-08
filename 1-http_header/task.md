@@ -102,6 +102,12 @@ HTTPの通信は速度を上げるため、基本的にデータを圧縮して�
 
 ### Q1 クロスオリジンとは何か説明しなさい
 
+<details><summary>回答</summary>
+同一オリジン以外のオリジンのこと  
+
+※開いているページと同じオリジンのリソースを同一オリジンと呼ぶ
+</details>
+
 ### Q2 HTTPヘッダーに直接関係のある技術を全て選びなさい
 
 - document.history
@@ -110,4 +116,21 @@ HTTPの通信は速度を上げるため、基本的にデータを圧縮して�
 - webstorage
 - SSR(server side rendaring)
 
+<details><summary>回答</summary>
+`CORS` `JSON-web-token`
+</details>
+
 ### Q3 HTTPヘッダインジェクションの手法と対策について簡潔に述べよ
+
+<details><summary>回答</summary>
+ユーザが入力したクエリにリダイレクトさせる処理があるとする（クエリの値をlocationにセットして返す）
+ 
+攻撃者は攻撃対象のURLに改行コード＋任意の`ResponseHeader`を仕込んでユーザにリンクを踏ませる
+
+サーバは`ResponseHeader`の`location`にクエリの値をセットする際に、改行コードがあると、次の行（別の`ResponseHeader`属性）として書き込んでしまう
+
+たとえば、`Set-Cookie:SID=111`を仕込んでいた場合、対象者のセッションIDが111に固定化され、セッションジャックなどの被害を受ける
+
+対策としては、改行コードを無効化するか、そもそもクエリパラメータを`ResponseHeader`に使用する処理を避ける
+
+</details>
