@@ -262,14 +262,38 @@ curl -X POST -H "content-type : application/x-www-form-urlencoded" -d "{"name": 
 
 ### Q1 curlの名前の由来を答えよ
 
+<details><summary>回答</summary>
+ふたつの説がある
+
+- curl（カール）という名前の由来はプログラムソース中に多く使われる括弧「{}」のことをcurly brackets（カールした括弧）と呼ぶことに由来している
+- "Client for URLs" の略
+</details>
+
 ### Q2 curlで送るリクエストの中身を確認する方法を答えよ
 
+<details><summary>回答</summary>
+`--verbose` オプションをつける
+</details>
+
 ### Q3 開発中にcurlを使う場面を説明せよ
+<details><summary>回答</summary>
+作成したAPIが正しく提供されているかを調べる
+</details>
 
 ### postmanに関するクイズを作成してください
 
 ### Q1 postmanで使える便利な機能をひとつ答えなさい
+<details><summary>回答</summary>
+テスト機能・ドキュメント機能など
+</details>
 
 ### Q2 Q1が活用できるシーンを答えなさい
+<details><summary>回答</summary>
+- CIと連携させ、APIの自動テストに使用する
+- APIを公開する際のdocument作成に活用する
+</details>
 
 ### Q3 postmanでgoogle.comのHTMLを取得しなさい
+<details><summary>回答</summary>
+google.comにGETリクエストを送る
+</details>
