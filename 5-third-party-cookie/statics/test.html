@@ -1,6 +1,7 @@
 <h1>test page</h1>
 
 <script>
-    fetch('https://93ba23426cd0.ngrok.io')
-    fetch('https://bc4c52e07f1f.ngrok.io',{mode:"cors",credentials: 'include'})
+    fetch("http://localhost:3000")
+    // fetch('https://93ba23426cd0.ngrok.io')
+    fetch('https://659862018bfd.ngrok.io/',{mode:"cors",credentials: 'include'}).then(res=>res.json()).then(res=>console.log(res))
 </script>
