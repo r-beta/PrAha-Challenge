@@ -60,17 +60,18 @@ Cookieなどの資格情報つきのリクエストの場合、ワイルドカ�
 
 <details><summary>回答</summary>
 第２引数に`{mode:'cors'}`を指定する
-<details>
+</details>
   
 ### Q2 クロスオリジンリソース共有ができない場合に、エラーとはならず空のレスポンスが返却されるようにするにはどうするか
 
 <details><summary>回答</summary>
 第２引数に`{mode:'no-cors'}`を指定する
-<details>
+</details>
   
 ### Q3 `access-control-allow-origin`で複数のドメインを許可するにはどうすればよいか
 
-<details><summary>回答</summary>
+<details><summary>回答</summary><div>
+  
 直接複数指定することはできないので変数で動的に指定する  
 （具体例）  
 ```
@@ -92,7 +93,7 @@ function checkDomain(host){
 ```
 リクエストヘッダに含まれるhostを取得し、許可するhostの配列などと付け合わせる  
 マッチしたとき、`access-control-allow-origin`に`"https://" + host`を設定する
-<details>
+</div></details>
   
   [[ 参考 ]](https://developer.mozilla.org/ja/docs/Web/API/Request/mode)
 
