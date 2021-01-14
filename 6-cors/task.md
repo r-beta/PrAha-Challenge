@@ -58,27 +58,22 @@ Cookieなどの資格情報つきのリクエストの場合、ワイルドカ�
 
 ### Q1 クライアント側でfetchを使用してcorsを行うために必要なことを答えよ
 
-<details><summary>回答</summary>
-  
-    第２引数に`{mode:'cors'}`を指定する
-    
+<details><summary>回答</summary>  
+第２引数に`{mode:'cors'}`を指定する
 <details>
   
 ### Q2 クロスオリジンリソース共有ができない場合に、エラーとはならず空のレスポンスが返却されるようにするにはどうするか
 
 <details><summary>回答</summary>
-  
-    第２引数に`{mode:'no-cors'}`を指定する
-    
+第２引数に`{mode:'no-cors'}`を指定する
 <details>
   
 ### Q3 `access-control-allow-origin`で複数のドメインを許可するにはどうすればよいか
 
 <details><summary>回答</summary>
-  
-  直接複数指定することはできないので変数で動的に指定する  
-  （具体例）  
-  ```
+直接複数指定することはできないので変数で動的に指定する  
+（具体例）  
+```
   function interceptor(req, res){
   host = req.headers.host;
 
@@ -94,10 +89,9 @@ function checkDomain(host){
   if(host == 'hogehoge.com')return true;
   return false;
 }
-  ```
-  リクエストヘッダに含まれるhostを取得し、許可するhostの配列などと付け合わせる  
-  マッチしたとき、`access-control-allow-origin`に`"https://" + host`を設定する
-  
+```
+リクエストヘッダに含まれるhostを取得し、許可するhostの配列などと付け合わせる  
+マッチしたとき、`access-control-allow-origin`に`"https://" + host`を設定する
 <details>
   
   [[ 参考 ]](https://developer.mozilla.org/ja/docs/Web/API/Request/mode)
