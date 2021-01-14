@@ -58,7 +58,7 @@ Cookieなどの資格情報つきのリクエストの場合、ワイルドカ�
 
 ### Q1 クライアント側でfetchを使用してcorsを行うために必要なことを答えよ
 
-<details><summary>回答</summary>  
+<details><summary>回答</summary>
 第２引数に`{mode:'cors'}`を指定する
 <details>
   
