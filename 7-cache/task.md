@@ -64,19 +64,29 @@ https://drive.google.com/file/d/1Wzytmnen59bR63WDx4Jb3zWl4RbDcjG3/view?usp=shari
 ### <回答>
 
 - [zenn](https://zenn.dev/)
-![zenn](images/zenn.png)
+
+![zenn](images/zenn.png)  
+
 - [unsplash](https://unsplash.com/)
-![unsplash](images/unsplash.png)
+
+![unsplash](images/unsplash.png)  
+
 - [React(日本語)](https://ja.reactjs.org/)
-![react](images/react.png)
+
+![react](images/react.png)  
 
 
 また、[Qiita](https://qiita.com/)でこのような現象が起きた
+
 １回目のリクエスト（Cmd + Shift + R）では大量のリクエスト  
-![qiita1](images/qiita1.png)
+
+![qiita1](images/qiita1.png)  
+
 ２回目のリクエスト（Cmd + R）では少量のリクエスト  
-![qiita2](images/qiita2.png)
-キャッシュ以前に、リクエストを制御している・・・？
+
+![qiita2](images/qiita2.png)  
+
+キャッシュ以前に、リクエスト自体を制御している・・・？
 
 
 
