@@ -64,7 +64,7 @@ https://drive.google.com/file/d/1Wzytmnen59bR63WDx4Jb3zWl4RbDcjG3/view?usp=shari
 ### <回答>
 
 - [zenn](https://zenn.dev/)
-![zenn](/images/zenn.png)
+![zenn](images/zenn.png)
 - [unsplash](https://unsplash.com/)
 ![unsplash](/images/unsplash.png)
 - [React(日本語)](https://ja.reactjs.org/)
