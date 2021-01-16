@@ -63,6 +63,8 @@ https://drive.google.com/file/d/1Wzytmnen59bR63WDx4Jb3zWl4RbDcjG3/view?usp=shari
 
 ### <回答>
 
+`status`が`304`になっているのがキャッシュレスポンス（キャッシュにリダイレクト）
+
 - [zenn](https://zenn.dev/)
 
 ![zenn](images/zenn.png)  
