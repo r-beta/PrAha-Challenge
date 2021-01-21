@@ -110,6 +110,34 @@ https://drive.google.com/file/d/1Wzytmnen59bR63WDx4Jb3zWl4RbDcjG3/view?usp=shari
 
 
 # 課題４（クイズ）
-### Q1 
-### Q2
-### Q3
+### Q1 Last-Modifiedについて説明せよ
+
+<details><summary>回答</summary><div>
+
+レスポンスヘッダに含まれる  
+サーバ側で、ファイルの最終更新日を入れて返す  
+次回リクエスト時に、ブラウザは上記の最終更新日をサーバに送信する  
+サーバ側でファイルをチェックし、最終更新日が同じなら304を返す（ブラウザキャッシュを使う）
+
+</div></details>
+
+### Q2 Etagについて説明せよ
+
+<details><summary>回答</summary><div>
+
+レスポンスヘッダに含まれる  
+サーバ側で、コンテンツごとにユニークなEtagを生成し返す  
+次回リクエスト時に、ブラウザは上記のEtagをサーバに送信する（`If-None-Match`ヘッダに含まれる）  
+サーバ側でEtagをチェックし、同じなら304を返す（ブラウザキャッシュを使う）
+
+</div></details>
+
+### Q3 上記２つとExpiresではどちらがサーバの負荷が少ないか、理由つきで答えよ
+
+<details><summary>回答</summary><div>
+
+### `Expires`のほうが負荷が少ない
+上記２つは304を返す際に、サーバ側でマッチさせる処理が走るが、  
+`Expires`を用いると、そもそもリクエストを送らないため、より負荷が少ない
+
+</div></details>
